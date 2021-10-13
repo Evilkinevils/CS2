@@ -1,0 +1,48 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char** argv) {
+
+  int height;
+  /* This is a repeatable pattern so I made this code 
+  able to extend to any even number, default for the question is 10 */
+  cout << "Enter desired height, 10 for standard figure:";
+  cin >> height;
+ 
+  if (height%2 == 0){
+  for(int j = height-1; j >= -(height-1); j = j-2){
+    int absj = abs(j);
+    for(int k = (height/2)-((absj+1)/2); k >> 0 ; k--){
+      cout << ' ';
+    }
+    for(int k = (height/2)-((absj-1)/2); k >> 0 ; k--){
+      cout << '#';
+    }
+    for(int k = (absj-1); k >> 0 ; k--){
+      cout << ' ';
+    }
+    if(absj == 1){
+      cout << '#';
+    }
+    else{
+      cout << ' ';
+    }
+    for(int k = (absj-1); k >> 0 ; k--){
+      cout << ' ';
+    }
+    for(int k = (height/2)-((absj-1)/2); k >> 0 ; k--){
+      cout << '#';
+    }
+    for(int k = (height/2)-((absj+1)/2); k >> 0 ; k--){
+      cout << ' ';
+    }
+    cout << '\n';
+  }
+  }
+  else{
+      cout << "I said an even number!\n";
+  }
+  return 0;
+}
